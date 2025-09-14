@@ -11,14 +11,14 @@ return {
   },
   lazy = false,
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    { '<leader>e', ':Neotree toggle position=float<CR>', desc = 'Neotree Toggle', silent = true },
   },
   opts = {
     filesystem = {
-      window = {
-        mappings = {
-          ['\\'] = 'close_window',
-        },
+      filtered_items = {
+        visible = true,
+        hide_dotfiles = true,
+        hide_gitignore = true,
       },
     },
   },
