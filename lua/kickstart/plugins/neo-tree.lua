@@ -11,7 +11,8 @@ return {
   },
   lazy = false,
   keys = {
-    { '<leader>e', ':Neotree toggle position=float<CR>', desc = 'Neotree Toggle', silent = true },
+    { '<leader>e', ':Neotree reveal toggle position=right<CR>', desc = 'Neotree Toggle', silent = true },
+    { '<leader>g', ':Neotree float git_status toggle <CR>', desc = 'Neotree Show Git Status ', silent = true },
   },
   opts = {
     filesystem = {
@@ -21,5 +22,6 @@ return {
         hide_gitignore = true,
       },
     },
+    hide_root_node = true,
   },
 }
