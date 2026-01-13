@@ -8,14 +8,39 @@ return {
       'Civitasv/cmake-tools.nvim',
       opts = {
         cmake_runner = {
-          name = 'toggleterm',
-          toggleterm = {
-            direction = 'float',
-            auto_scroll = true,
-            close_on_exit = false,
-            singleton = true,
+          name = 'quickfix',
+          opts = {
+            quickfix = {
+              auto_close_when_success = false,
+            },
           },
         },
+        cmake_executor = {
+          name = 'quickfix',
+          opts = {
+            quickfix = {
+              auto_close_when_success = false,
+            },
+          },
+        },
+      },
+    },
+    {
+      'sphamba/smear-cursor.nvim',
+      opts = {},
+    },
+    {
+      'ggandor/lightspeed.nvim',
+      dependencies = {
+        'tpope/vim-repeat',
+      },
+    },
+    {
+      'y3owk1n/undo-glow.nvim',
+      opts = {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
       },
     },
     {
@@ -50,5 +75,24 @@ return {
       },
       opts_extend = { 'sources.default' },
     },
+  },
+  {
+    'mfussenegger/nvim-dap',
+    event = 'VeryLazy',
+    dependencies = {
+      'rcarriga/nvim-dap-ui',
+      'nvim-neotest/nvim-nio',
+      'jay-babu/mason-nvim-dap.nvim',
+      'theHamsta/nvim-dap-virtual-text',
+    },
+  },
+  {
+    'iamcco/markdown-preview.nvim',
+    cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
+    build = 'cd app && yarn install',
+    init = function()
+      vim.g.mkdp_filetypes = { 'markdown' }
+    end,
+    ft = { 'markdown' },
   },
 }

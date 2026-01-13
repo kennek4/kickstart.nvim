@@ -41,9 +41,11 @@ vim.keymap.set('n', '<Leader>d', function()
 end, { silent = true, desc = 'Close unused buffers' })
 
 -- LSP
-vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, { desc = 'Rename variable' })
-vim.keymap.set('n', '<S-h>', vim.lsp.buf.hover, { desc = 'Cursor [H]over' })
-vim.keymap.set('n', '<S-s>', vim.lsp.buf.code_action, { desc = 'Look at [S]uggestions' })
+vim.keymap.set('n', '<leader>lr', vim.lsp.buf.rename, { desc = 'LSP: [R]ename variable' })
+vim.keymap.set('n', '<leader>lh', vim.lsp.buf.hover, { desc = 'LSP: Cursor [H]over' })
+vim.keymap.set('n', '<leader>ls', vim.lsp.buf.code_action, { desc = 'LSP: Look at [S]uggestions' })
+vim.keymap.set('n', '<leader>lf', vim.lsp.buf.references, { desc = 'LSP: [F]ind References' })
+vim.keymap.set('n', '<leader>ld', vim.lsp.buf.definition, { desc = 'LSP: Find Definition' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
